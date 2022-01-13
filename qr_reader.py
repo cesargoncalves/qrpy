@@ -1,9 +1,15 @@
-#!/usr/bin/env python3
+import cv2
+import numpy as np
 
-from pyzbar.pyzbar import decode
-from PIL import Image
+## input image is input.png
+inputImage = cv2.imread("input.png")
 
-img = Image.open('input.png')
-result = decode(img)
-for i in result:
-    print(i.data.decode("utf-8"))
+## detect and decode the qrcode
+decoder = cv2.QRCodeDetector()
+data = decoder.detectAndDecode(inputImage)[0]
+
+## show data
+if len(data)>0:
+  print(format(data))
+else:
+  print("QR Code not detected")

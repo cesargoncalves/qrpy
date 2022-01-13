@@ -1,4 +1,4 @@
-# qrpy
+# qrpy - opencv
 
 ## Download the source
 
@@ -21,10 +21,6 @@ git clone https://github.com/cesargoncalves/qrpy.git
 write data to encoded qr code and save it in output.png
 
 ## Decode data
-
-must install **libzbar0** package
-
-alternatively, for a solution with no dependecies, use opencv branch (less performance, may not read some qr codes)
 
 ```bash
 ./run.sh --read
